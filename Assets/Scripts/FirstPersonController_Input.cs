@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(FirstPersonController))]
 public class FirstPersonController_Input : MonoBehaviour
 {
+    public GameObject PanelInventario;
+
     FirstPersonController controller;
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,11 @@ public class FirstPersonController_Input : MonoBehaviour
     private void FixedUpdate()
     {
         controller.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")), Time.fixedDeltaTime);
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+
+        }
     }
     private void LateUpdate()
     {

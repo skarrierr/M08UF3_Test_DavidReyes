@@ -45,7 +45,8 @@ public class ObjectPicker : MonoBehaviour
     public float pickedRbDragAngular = 100;
     float pickedRbDragAngularOriginal;
 
-
+    public GameObject puntero1;
+    public GameObject puntero2;
 
 
     void Start()
@@ -151,12 +152,18 @@ public class ObjectPicker : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log("Raycast hit: " + hit.collider.gameObject.name);
+           
+            if(hit.distance <= distanceMax)
+            {
+                puntero2.SetActive(true);
+            }
+            else
+            {
+                puntero2.SetActive(false);
+
+            }
         }
-        else
-        {
-            Debug.Log("No hit");
-        }
+
 
     }
 
